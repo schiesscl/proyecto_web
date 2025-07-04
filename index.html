@@ -75,7 +75,7 @@
             $(".botonVer").click(function() {
                 
                 var valor = optenerDatoBoton(this);
-                var texto = "<p>Próximamente más información de "+valor+"</p>";
+                var texto = "<p class='parrafoExtra'>Próximamente más información de "+valor+"</p>";
                 var boton = '<a href="#" class="btn btn-primary botonVerMenos">Ver menos</a>';
                 $(this).parent().append(texto);
                 $(this).parent().append(boton);
@@ -84,7 +84,7 @@
             });
             
             $(document).on("click", ".botonVerMenos", function() {
-                $(this).parent().find("p").remove(); // Elimina el párrafo
+                $(this).parent().find(".parrafoExtra").remove(); // Elimina el párrafo
                 $(this).parent().find(".botonVer").show();
                 $(this).remove(); // Elimina el botón "Ver menos"
             });
