@@ -23,19 +23,13 @@
                 
                 var valor = optenerDatoBoton(this);
                 var texto = "<p>Próximamente más información de "+valor+"</p>";
-                var boton = '<a href="#" class="btn btn-primary botonVerMenos">Ver menos</a>';
+                var boton = '<a href="#" class="btn btn-primary botonVerMenos" onClick="ocultarBoton(this)">Ver menos</a>';
                 $(this).parent().append(texto);
                 $(this).parent().append(boton);
-                $(this).hide(); // Elimina el botón "Ver más"
+                $(this).toggle(); // Elimina el botón "Ver más"
                 
             });
-
-            $(document).on("click", ".botonVerMenos", function() {
-                $(this).prev().remove(); // Elimina el párrafo
-                $(this).remove(); // Elimina el botón "Ver menos"
-                $(this).parent().find(".botonVer").show(); // Muestra el botón "Ver más"
-            });
-
-        });</script>
+        });
+        </script>
     </body>
 </html>
